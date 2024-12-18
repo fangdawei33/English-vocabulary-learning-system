@@ -170,7 +170,7 @@ void userMainMenu(User *user) {
 
         switch (choice) {
             case 1:
-                showUserInfo(user);
+                showUserInfo(user);//已完成
                 break;
             case 2:
                 punchIn(user);
@@ -324,26 +324,26 @@ void startLearning(User *user, int wordbankIndex) {
     int choice;
     while (1) {
         printf("\n请选择背单词模式：\n");
-        printf("1. 顺序背单词\n");
-        printf("2. 乱序背单词\n");
-        printf("3. 根据英文选中文\n");
-        printf("4. 根据中文选英文\n");
+        printf("1. 根据英文选中文(顺序)\n");
+        printf("2. 根据中文选英文(顺序)\n");
+        printf("3. 根据英文选中文(乱序)\n");
+        printf("4. 根据中文选英文(乱序)\n");
         printf("5. 返回\n");
         printf("请输入选项: ");
         scanf("%d", &choice);
 
         switch (choice) {
             case 1:
-                wordOrderLearning(wordbankIndex); // 顺序背单词
+                void selectChineseAccordingToEnglishInOrder(wordbankIndex);// 根据英文选中文(顺序)
                 break;
             case 2:
-                randomOrderLearning(wordbankIndex); // 乱序背单词
+                void selectEnglishAccordingToChineseInOrder(wordbankIndex); // 根据中文选英文(顺序)
                 break;
             case 3:
-                englishToChineseLearning(wordbankIndex); // 英文选中文
+               void selectChineseAccordingToEnglishInRandomOrder(wordbankIndex); // 根据英文选中文(乱序)
                 break;
             case 4:
-                chineseToEnglishLearning(wordbankIndex); // 中文选英文
+                void selectEnglishAccordingToChineseInRandomOrder(wordbankIndex);//根据中文选英文(乱序)
                 break;
             case 5:
                 return; // 返回
@@ -353,44 +353,14 @@ void startLearning(User *user, int wordbankIndex) {
         }
     }
 }
-
-// 顺序背单词
-void wordOrderLearning(int wordbankIndex) {
-    printf("顺序背单词模式启动...\n");
-    for (int i = 0; i < wordbanks[wordbankIndex].wordCount; i++) {
-        printf("背诵单词: %s\n", wordbanks[wordbankIndex].words[i]);
-        // 这里可以添加用户输入或测试功能
-    }
-}
-
-// 乱序背单词
-void randomOrderLearning(int wordbankIndex) {
-    printf("乱序背单词模式启动...\n");
-    // 这里可以使用乱序算法来随机排列单词
-    for (int i = 0; i < wordbanks[wordbankIndex].wordCount; i++) {
-        printf("背诵单词: %s\n", wordbanks[wordbankIndex].words[i]);
-        // 可以添加用户输入的测试
-    }
-}
-
-// 根据英文选中文
-void englishToChineseLearning(int wordbankIndex) {
-    printf("英文选中文模式启动...\n");
-    for (int i = 0; i < wordbanks[wordbankIndex].wordCount; i++) {
-        printf("英文: %s\n", wordbanks[wordbankIndex].words[i]);
-        // 提示用户输入中文翻译
-    }
-}
-
-// 根据中文选英文
-void chineseToEnglishLearning(int wordbankIndex) {
-    printf("中文选英文模式启动...\n");
-    for (int i = 0; i < wordbanks[wordbankIndex].wordCount; i++) {
-        printf("中文: %s\n", wordbanks[wordbankIndex].words[i]);
-        // 提示用户输入英文翻译
-    }
-}
-
+// 根据英文选中文(顺序)
+    void selectChineseAccordingToEnglishInOrder(wordbankIndex)
+   // 根据中文选英文(顺序)
+    void selectEnglishAccordingToChineseInOrder(wordbankIndex))
+// 根据英文选中文(乱序)
+  void selectChineseAccordingToEnglishInRandomOrder(wordbankIndex)
+    // 根据中文选英文(乱序)
+   void selectEnglishAccordingToChineseInRandomOrder(wordbankIndex)
 
 // 趣味挑战
 void funChallenge() {
