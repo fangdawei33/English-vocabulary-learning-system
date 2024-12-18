@@ -1,0 +1,5 @@
+computer   计算机           名词             
+software   软件             名词             
+window     窗户             名词             
+author     作者             名词             
+message    消息             名词             
